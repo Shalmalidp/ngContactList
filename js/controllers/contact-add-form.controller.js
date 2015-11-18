@@ -10,7 +10,7 @@ let ContactAdd = function(ContactService, $scope) {
 
   function addContact(contactObj){
     ContactService.addContact(contactObj).then((res)=>{
-      console.log('res', res);
+      //console.log('res', res);
     });
   } 
   //validating name
@@ -51,7 +51,7 @@ let ContactAdd = function(ContactService, $scope) {
     if(message.length <= 1){
       vm.errMsgMessage="Message cannot be left empty";
     }else{
-      vm.errMsgMessage="nice work";
+      vm.errMsgMessage="";
     }
   };
 

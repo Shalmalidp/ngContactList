@@ -6388,7 +6388,13 @@ th.hide-for-touch {
     display: table-cell !important; } }
 
 body {
-  background: #e2ebf3; }
+  background: #FFC0A7;
+  font-family: 'Cookie', cursive; }
+
+h6 {
+  font-family: 'Cookie', cursive;
+  font-size: 1.5em;
+  padding-left: 20px; }
 
 .addForm {
   width: 500px;
@@ -6402,10 +6408,28 @@ body {
   height: 150px; }
 
 .sub-btn {
-  background-color: #17DA43; }
+  background-color: #C9D883;
+  font-family: 'Cookie', cursive;
+  font-size: 1.5em; }
 
 input.in-border,
 textarea.in-border {
   border-left: 3px solid black; }
+
+.homeview {
+  width: 600px;
+  border: double;
+  padding: 15px;
+  padding-top: 20px;
+  margin: 50px auto;
+  background-color: #C9D883; }
+
+small {
+  color: red; }
+
+.messagelist {
+  list-style: none;
+  font-style: italic;
+  font-size: 1.5em; }
 
 /*# sourceMappingURL=main.css.map */

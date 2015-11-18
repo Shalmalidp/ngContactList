@@ -2,6 +2,7 @@ let ContactService = function($http, PARSE) {
   
   let url = PARSE.URL +'classes/contact';
   this.addContact = addContact;
+  this.getMessages = getMessages;
 
 
   function Contact(contactObj){
@@ -16,6 +17,10 @@ let ContactService = function($http, PARSE) {
     return $http.post(url, newcontact, PARSE.CONFIG);
   }
 
+  function getMessages(){
+    console.log($http.get(url,PARSE.CONFIG));
+    return $http.get(url, PARSE.CONFIG);
+  }
 
 };
 

@@ -62,7 +62,7 @@ var ContactAdd = function ContactAdd(ContactService, $scope) {
 
   function addContact(contactObj) {
     ContactService.addContact(contactObj).then(function (res) {
-      console.log('res', res);
+      //console.log('res', res);
     });
   }
   //validating name
@@ -103,7 +103,7 @@ var ContactAdd = function ContactAdd(ContactService, $scope) {
     if (message.length <= 1) {
       vm.errMsgMessage = "Message cannot be left empty";
     } else {
-      vm.errMsgMessage = "nice work";
+      vm.errMsgMessage = "";
     }
   };
 
@@ -147,15 +147,22 @@ module.exports = exports["default"];
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var HomeController = function HomeController(PARSE) {
+var HomeController = function HomeController(ContactService) {
 
   var vm = this;
   vm.title = 'My Friends';
 
-  console.log(PARSE);
+  ContactService.getMessages().then(function (res) {
+    //console.log('res from HomeController', res);
+    vm.contacts = res.data.results;
+    //console.log('res', res.data.results);
+    return vm.contacts;
+  });
+
+  //console.log(PARSE);
 };
 
-HomeController.$inject = ['PARSE'];
+HomeController.$inject = ['ContactService'];
 
 exports['default'] = HomeController;
 module.exports = exports['default'];
@@ -203,6 +210,7 @@ var ContactService = function ContactService($http, PARSE) {
 
   var url = PARSE.URL + 'classes/contact';
   this.addContact = addContact;
+  this.getMessages = getMessages;
 
   function Contact(contactObj) {
     this.name = contactObj.name;
@@ -214,6 +222,11 @@ var ContactService = function ContactService($http, PARSE) {
   function addContact(contactObj) {
     var newcontact = new Contact(contactObj);
     return $http.post(url, newcontact, PARSE.CONFIG);
+  }
+
+  function getMessages() {
+    console.log($http.get(url, PARSE.CONFIG));
+    return $http.get(url, PARSE.CONFIG);
   }
 };
 

@@ -1,10 +1,15 @@
-<h4>{{ vm.title }}</h4>
+<h6>{{ vm.title }}</h6>
 
-<p>Welcome to my contact app....please add yourself</p>
-
-<div>  
-  <ul>
-    <!-- <li ng-repeat="contact in vm.contacts">{{ contact }}</li> -->
-    <hr>
-  </ul>
-</div>
+<h6>Welcome to my contact app....please add yourself to my Contacts</h6>
+<hr>
+  
+  <div class='homeview'>
+    <ul>
+      <li class ="messagelist" ng-repeat="contact in vm.contacts">
+        <!-- <i class="fa fa-commenting-o"></i> -->
+        {{ contact.message }}
+        <hr>
+      </li>
+    </ul>
+  </div>
+  <hr>
