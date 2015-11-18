@@ -1,6 +1,31 @@
 // Put any @imports here
 // See Readme for a list of supported ones
+@import 'foundation';
 
 body {
   background: #e2ebf3;
 }
+
+.addForm{
+  width:500px;
+  margin :50px auto;
+  border :1.5em solid black;
+}
+
+.addCont{
+  padding :15px;
+}
+
+.msg{
+  height: 150px;
+}
+
+.sub-btn{
+  background-color:#17DA43;
+}
+
+input.in-border, 
+textarea.in-border {
+  border-left :3px solid black;
+}
+

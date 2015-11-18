@@ -1,0 +1,34 @@
+
+<div class='addForm'>
+
+  <form class='addCont' ng-submit='vm.addContact(contactObj)'>
+    <h4>Contact Us</h4>
+    <div>
+      <label>Name</label>
+      <input ng-model ="contactObj.name" placeholder='Sally Smith' class='in-border'>
+      <small>{{ vm.errMsgName }}</small>
+    </div>
+
+  <!-- {{ contactObj }} -->
+    <div>
+      <label>Email</label>
+      <input ng-model="contactObj.email" placeholder='ssmith@gmail.com' class='in-border'>
+    <small>{{ vm.errMsgEmail }}</small>
+    </div>
+
+    <div>
+      <label>Website</label>
+      <input ng-model="contactObj.website" placeholder='http://mssmith.net' class='in-border'>
+    <small>{{ vm.errMsgWebsite }}</small>
+    </div>
+    
+    <div>
+      <label>Message</label>
+      <textarea ng-model="contactObj.message" class='msg in-border' placeholder='A friendly message...'></textarea>
+    <small>{{ vm.errMsgMessage }}</small>
+    </div>
+    <!-- ng-submit='vm.validateAll(contactObj)' -->
+    <button class='sub-btn'> Submit </button>
+
+  </form>
+</div>
