@@ -16,7 +16,7 @@
 >Once the form is filled out, the info is sent to Parse.
 
 
-####please check out my link :http://Angular-Contact-List.surge.sh
+####please check out my link :http://angular-contact-list.surge.sh
 
 
 ## Usage
