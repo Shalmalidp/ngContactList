@@ -6414,6 +6414,7 @@ h6 {
 
 input.in-border,
 textarea.in-border {
+  font-size: 20px;
   border-left: 3px solid black; }
 
 .homeview {

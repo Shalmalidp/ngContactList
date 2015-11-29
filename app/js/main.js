@@ -206,7 +206,7 @@ _angular2['default'].module('app', ['ui.router']).config(_config2['default']).se
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
-var ContactService = function ContactService($http, PARSE) {
+var ContactService = function ContactService($http, PARSE, $state) {
 
   var url = PARSE.URL + 'classes/contact';
   this.addContact = addContact;
@@ -221,7 +221,8 @@ var ContactService = function ContactService($http, PARSE) {
 
   function addContact(contactObj) {
     var newcontact = new Contact(contactObj);
-    return $http.post(url, newcontact, PARSE.CONFIG);
+    $http.post(url, newcontact, PARSE.CONFIG);
+    return state.go('root.home');
   }
 
   function getMessages() {
@@ -230,7 +231,7 @@ var ContactService = function ContactService($http, PARSE) {
   }
 };
 
-ContactService.$inject = ['$http', 'PARSE'];
+ContactService.$inject = ['$http', 'PARSE', '$state'];
 
 exports['default'] = ContactService;
 module.exports = exports['default'];

@@ -1,4 +1,4 @@
-let ContactService = function($http, PARSE) {
+let ContactService = function($http, PARSE,$state) {
   
   let url = PARSE.URL +'classes/contact';
   this.addContact = addContact;
@@ -14,7 +14,8 @@ let ContactService = function($http, PARSE) {
 
   function addContact(contactObj){
     let newcontact = new Contact(contactObj);
-    return $http.post(url, newcontact, PARSE.CONFIG);
+    $http.post(url, newcontact, PARSE.CONFIG);
+    return state.go('root.home'); 
   }
 
   function getMessages(){
@@ -24,6 +25,6 @@ let ContactService = function($http, PARSE) {
 
 };
 
-ContactService.$inject = ['$http', 'PARSE'];
+ContactService.$inject = ['$http', 'PARSE', '$state'];
 
 export default ContactService;
