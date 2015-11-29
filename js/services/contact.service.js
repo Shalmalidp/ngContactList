@@ -14,8 +14,8 @@ let ContactService = function($http, PARSE,$state) {
 
   function addContact(contactObj){
     let newcontact = new Contact(contactObj);
-    $http.post(url, newcontact, PARSE.CONFIG);
-    return state.go('root.home'); 
+    return $http.post(url, newcontact, PARSE.CONFIG);
+    //return state.go('root.home'); 
   }
 
   function getMessages(){

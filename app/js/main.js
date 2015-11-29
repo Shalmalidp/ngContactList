@@ -63,6 +63,12 @@ var ContactAdd = function ContactAdd(ContactService, $scope) {
   function addContact(contactObj) {
     ContactService.addContact(contactObj).then(function (res) {
       //console.log('res', res);
+      //console.log('cont', contactObj);
+      $scope.contactObj.name = "";
+      $scope.contactObj.email = "";
+      $scope.contactObj.website = "";
+      $scope.contactObj.message = "";
+      console.log('now', contactObj);
     });
   }
   //validating name
@@ -221,8 +227,8 @@ var ContactService = function ContactService($http, PARSE, $state) {
 
   function addContact(contactObj) {
     var newcontact = new Contact(contactObj);
-    $http.post(url, newcontact, PARSE.CONFIG);
-    return state.go('root.home');
+    return $http.post(url, newcontact, PARSE.CONFIG);
+    //return state.go('root.home');
   }
 
   function getMessages() {

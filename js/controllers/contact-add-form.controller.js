@@ -11,6 +11,12 @@ let ContactAdd = function(ContactService, $scope) {
   function addContact(contactObj){
     ContactService.addContact(contactObj).then((res)=>{
       //console.log('res', res);
+      //console.log('cont', contactObj);
+      $scope.contactObj.name = "";
+      $scope.contactObj.email ="";
+      $scope.contactObj.website="";
+      $scope.contactObj.message="";
+      console.log('now', contactObj);
     });
   } 
   //validating name
